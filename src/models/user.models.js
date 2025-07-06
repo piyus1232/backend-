@@ -1,5 +1,5 @@
 import mongoose,{Schema} from "mongoose";
-import bcrypt from bcrypt
+import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
  const userSchema = new mongoose.Schema(
     {
@@ -15,10 +15,10 @@ import jwt from "jsonwebtoken"
             type: String,
             required: true,
             unique: true,
-            lowecase: true,
+            lowercase: true,
             trim: true, 
         },
-        fullName: {
+        fullname: {
             type: String,
             required: true,
             trim: true, 
@@ -81,4 +81,4 @@ userSchema.methods.generateRefreshToken = function(){
     )
 }
 
- export default User = mongoose.model('User',userSchema) 
+ export const User = mongoose.model('User',userSchema) 
